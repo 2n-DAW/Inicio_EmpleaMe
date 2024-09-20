@@ -9,6 +9,11 @@ tmp/
 app/**/*.js
 app/**/*.js.map
 
+
+# Visual Studio Code
+.vscode/
+.vscode/*
+
 # dependencies
 node_modules/
 bower_components/
