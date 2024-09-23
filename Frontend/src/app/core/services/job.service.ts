@@ -1,26 +1,25 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Job } from '../models/job.model';
-
-const URL = 'http://localhost:3000/jobs';
-const URLcat = 'http://localhost:3000/jobsByCategory';
+import { ApiService } from './api.service';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root' // 'root' indica que este servicio será singleton en toda la aplicación
 })
 export class JobService {
-  constructor(private http: HttpClient) { }
+  constructor (
+    private apiService: ApiService
+  ) {}
 
   all_jobs(): Observable<Job[]> {
-    return this.http.get<Job[]>(URL);
+    return this.apiService.get(`${/jobs/}`);
   }
 
   get_job(slug: String): Observable<Job> {
-    return this.http.get<Job>(`${URL}/${slug}`);
+    return this.apiService.get(`${/jobs/}${slug}`);
   }
 
   getJobsByCategory(slug: String): Observable<Job[]> {
-    return this.http.get<Job[]>(`${URLcat}/${slug}`);
+    return this.apiService.get(`${/jobsByCategory/}${slug}`);
   }
 }
