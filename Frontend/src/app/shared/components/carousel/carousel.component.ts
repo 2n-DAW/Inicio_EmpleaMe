@@ -33,8 +33,9 @@ export class CarouselComponent implements OnInit {
   carousel_categories(): void {
     this.page = "categories";
     this.CarouselService.getCarouselHome().subscribe(((data: any) => {
-      console.log(data);
+      // console.log(data);
       this.items_carousel = data.categories;
+      console.log(this.items_carousel);
     }))
   }
   carousel_shop_details(): void {

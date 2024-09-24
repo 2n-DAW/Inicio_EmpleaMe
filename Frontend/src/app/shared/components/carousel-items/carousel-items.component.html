@@ -1,7 +1,7 @@
 <ngb-carousel *ngIf="page === 'categories'" style="background-color: #1e262d">
     <ng-template *ngFor="let category of categories;" ngbSlide>
         <div class="picsum-img-wrapper contenedor">
-            <img class="img_carousel" src="../../../{{category.image}}"
+            <img class="img_carousel" src="img_categories/{{category.image}}"
                 ug][routerLink]="['/shop/categories/', category.sl" alt="" />
         </div>
         <div class="carousel-caption display-4">
