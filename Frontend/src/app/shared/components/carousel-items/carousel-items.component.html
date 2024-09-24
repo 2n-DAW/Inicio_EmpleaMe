@@ -2,7 +2,7 @@
     <ng-template *ngFor="let category of categories;" ngbSlide>
         <div class="picsum-img-wrapper contenedor">
             <img class="img_carousel" src="img_categories/{{category.image}}"
-                ug][routerLink]="['/shop/categories/', category.sl" alt="" />
+                routerLink="['/shop/categories/', category.sl" alt="" />
         </div>
         <div class="carousel-caption display-4">
             <h3>{{category.category_name}}</h3>
